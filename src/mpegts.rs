@@ -40,7 +40,8 @@ impl scte35_reader::SpliceInfoProcessor for DumpSpliceInfoProcessor {
         }
         println!();
         for d in &descriptors {
-            println!(" - {:#?}", d);
+            let out = format!(" - {:#?}", d);
+            println!("{}", out.replace('\n', ""))
         }
     }
 }
